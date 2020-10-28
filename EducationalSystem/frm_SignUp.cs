@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SmartLinli.DatabaseDevelopement;
 
 namespace EducationalSystem
 {
@@ -23,6 +24,17 @@ namespace EducationalSystem
                 $@"INSERT tb_Student(NO, Password)
                    VALUES
                   ('{txt_Name.Text}', '{txt_Password.Text}'); ";
+
+            SqlHelper sqlHelper = new SqlHelper();
+            int rowAffected = sqlHelper.QuickSubmit(commandText);
+            if (rowAffected==1)
+            {
+                MessageBox.Show("注册成功！");
+            }
+            else
+            {
+                MessageBox.Show("注册失败！");
+            }
         }
     }
 }
