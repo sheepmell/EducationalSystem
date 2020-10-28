@@ -36,5 +36,6 @@ namespace EducationalSystem
                 MessageBox.Show("注册失败！");
             }
         }
+        SqlHelper sqlHelper = new SqlHelper();
     }
 }
