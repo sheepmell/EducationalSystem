@@ -7,6 +7,10 @@ CREATE DATABASE EducationalSystem
 	LOG ON
 	    (NAME='LogFile_1'
 		,FILENAME='D:\EducationalSystem\LogFile_1.ldf');
+USE EducationalSystem;
+IF OBJECT_ID('tb_Student')IS NOT NULL
+    DROP TABLE tb_Student;
+GO
 CREATE TABLE tb_Student
     (
 	    NO
@@ -40,5 +44,7 @@ CREATE TABLE tb_Student
 		,PersonalResume
 		    XML
 			NOT NULL
-		,
+		,Password
+		    VARCHAR(20)
+			NOT NULL
 	)
