@@ -25,5 +25,6 @@ namespace EducationalSystem
                    VALUES
                   ('{txt_Name.Text}', '{txt_Password.Text}'); ";
         }
+        SqlHelper sqlHelper = new SqlHelper();
     }
 }
